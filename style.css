@@ -1,0 +1,118 @@
+*{
+    
+
+}
+.title {
+    padding-top: 20px;
+    font-family: "Jaro", sans-serif;
+    font-size: 50px;
+    text-align: center;
+    color:#38023B;
+}
+.body{
+    background-color:  #cfe9ef;
+    
+}
+
+.main {
+    padding: 10px;
+
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    left: 10vh;
+    top: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: rgb(69, 79, 66);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #529855;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+.flower-container {
+    background-color: #DACEF0;
+    border-radius: 10px;
+    border: 1px solid #bfb3d6;
+    box-shadow: 0 4px 8px rgba(124, 204, 146, 0.1);
+    margin: 20px auto;
+    text-align: center;
+    width: 550px;
+    height: 450px;
+    position: relative;
+    bottom: 40px;
+}
+
+/* Button Group Styling */
+.button-group {
+    width: 550px;
+    margin: 10px auto;
+    bottom: 40px; /* Centered and spaced from the container */
+}
+
+.ConfirmBtn, .DeleteBtn {
+    background-color: #38023B;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 15px;
+    border: none;
+    min-width: 120px; /* Consistent size */
+}
+
+.ConfirmBtn:hover, .DeleteBtn:hover {
+    background-color:#8c3c90; /* Darker shade on hover */
+}
+/* Flower container styling */
+.flower-container {
+    background-color: #DACEF0;
+    border-radius: 12px;
+    width: 60%;
+}
+
+/* Flower image styling */
+.flower-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.flower-img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
