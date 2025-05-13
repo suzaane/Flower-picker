@@ -1,22 +1,44 @@
-*{
-    
-
+:root {
+    /* Light Mode Colors (Default) */
+    --background-color: #cfe9ef;
+    --container-background: #DACEF0;
+    --text-color: #38023B;
+    --primary-color: #38023B;
+    --hover-color: #8c3c90;
+    --border-color: #bfb3d6;
+    --box-shadow: rgba(124, 204, 146, 0.1);
 }
+
+/* Dark Mode Colors */
+:root.dark-mode {
+    --background-color: #252547;
+    --container-background: #22325d;
+    --text-color: #e5e5e5;
+    --primary-color: #0f3460;
+    --hover-color: #533483;
+    --border-color: #0f3460;
+    --box-shadow: rgba(0, 0, 0, 0.2);
+}
+
+* {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
 .title {
     padding-top: 20px;
     font-family: "Jaro", sans-serif;
     font-size: 50px;
     text-align: center;
-    color:#38023B;
-}
-.body{
-    background-color:  #cfe9ef;
-    
+    color: var(--text-color);
 }
 
 .main {
     padding: 10px;
-
 }
 
 .switch {
@@ -65,11 +87,12 @@ input:checked + .slider {
 input:checked + .slider:before {
     transform: translateX(24px);
 }
+
 .flower-container {
-    background-color: #DACEF0;
+    background-color: var(--container-background);
     border-radius: 10px;
-    border: 1px solid #bfb3d6;
-    box-shadow: 0 4px 8px rgba(124, 204, 146, 0.1);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px var(--box-shadow);
     margin: 20px auto;
     text-align: center;
     width: 550px;
@@ -78,33 +101,25 @@ input:checked + .slider:before {
     bottom: 40px;
 }
 
-/* Button Group Styling */
 .button-group {
     width: 550px;
     margin: 10px auto;
-    bottom: 40px; /* Centered and spaced from the container */
+    bottom: 40px;
 }
 
 .ConfirmBtn, .DeleteBtn {
-    background-color: #38023B;
+    background-color: var(--primary-color);
     color: white;
     padding: 15px 25px;
     border-radius: 15px;
     border: none;
-    min-width: 120px; /* Consistent size */
+    min-width: 120px;
 }
 
 .ConfirmBtn:hover, .DeleteBtn:hover {
-    background-color:#8c3c90; /* Darker shade on hover */
-}
-/* Flower container styling */
-.flower-container {
-    background-color: #DACEF0;
-    border-radius: 12px;
-    width: 60%;
+    background-color: var(--hover-color);
 }
 
-/* Flower image styling */
 .flower-img {
     width: 100px;
     height: 100px;
@@ -113,6 +128,69 @@ input:checked + .slider:before {
 }
 
 .flower-img:hover {
-    transform: scale(1.05); /* Slight zoom effect */
+    transform: scale(1.05);
+}
+/* Add this to your existing CSS */
+
+/* Selected flower styling */
+.flower-img.selected {
+    border: 3px solid #38023B;
+    box-shadow: 0 0 8px rgba(56, 2, 59, 0.6);
+    transform: scale(1.05);
 }
 
+/* For dark mode selected flowers */
+:root.dark-mode .flower-img.selected {
+    border: 3px solid #dce0e4;
+    box-shadow: 5px 5px 8px rgb(96, 152, 220);
+}
+
+/* Selection limit message */
+.selection-message {
+    color: var(--text-color);
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Result container */
+.result-container {
+    background-color: var(--container-background);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px var(--box-shadow);
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    width: 550px;
+    display: none; /* Initially hidden */
+}
+
+.selected-flowers {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.compliment {
+    font-family: "Caveat", cursive;
+    font-size: 24px;
+    color: var(--text-color);
+    margin-top: 20px;
+}
+
+/* Back button */
+.BackBtn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 15px;
+    border: none;
+    min-width: 120px;
+    margin-top: 20px;
+}
+
+.BackBtn:hover {
+    background-color: var(--hover-color);
+}
